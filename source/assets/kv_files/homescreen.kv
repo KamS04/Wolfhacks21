@@ -29,7 +29,11 @@
             Button:
                 text: 'Passengers'
                 background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                on_press:
+                    app.switch_screen(app.passengers_screen)
 
             Button:
                 text: 'Food'
                 background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                on_press:
+                    app.switch_screen(app.food_screen)

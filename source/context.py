@@ -40,7 +40,8 @@ FILES = {
         'homescreen_bg': os.path.join('rootdir', 'assets', 'imgs', 'homescreenbg.png')
     }),
     'kv_files': [
-        os.path.join('rootdir', 'assets', 'kv_files', 'homescreen.kv')
+        os.path.join('rootdir', 'assets', 'kv_files', 'homescreen.kv'),
+        os.path.join('rootdir', 'assets', 'kv_files', 'passengersscreen.kv')
     ],
     'app_kv': os.path.join('rootdir', 'assets', 'main.kv')
 }

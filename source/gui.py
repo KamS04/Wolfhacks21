@@ -5,7 +5,7 @@ from kivy.lang.builder import Builder
 from kivy.core.window import Window
 
 # widgets
-from ui import homescreen
+from ui import homescreen, passengersscreen
 
 def calculate_size(width, aspect_ratio):
     height = width * aspect_ratio[1] / aspect_ratio[0]
@@ -16,6 +16,10 @@ ASPECT_RATIO = (1600, 987)
 Window.size = calculate_size(1000, ASPECT_RATIO)
 
 class MainApp(App):
+    passengers_screen = 'passengers'
+    home_screen = 'home'
+    food_screen = 'food'
+
     def __init__(self, context):
         super().__init__()
         self.context = context
@@ -28,3 +32,5 @@ class MainApp(App):
         main_kv = self.context.get_file(self.context.files.app_kv)        
         return Builder.load_file(main_kv)
 
+    def switch_screen(self, screen_name):
+        self.root.current = screen_name
