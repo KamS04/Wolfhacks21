@@ -5,6 +5,7 @@ from kivy.properties import NumericProperty, StringProperty, ObjectProperty
 from classes import food
 from kivy.app import App
 
+
 class FoodView(ButtonBehavior, FloatLayout):
     id = NumericProperty(0)
     name = StringProperty('')
@@ -30,13 +31,30 @@ class FoodView(ButtonBehavior, FloatLayout):
     def on_press(self, *args):
         App.get_running_app().show_food_info(self.food)
 
+
 class FoodScreen(Screen):
     grid = ObjectProperty()
+    _initialized = False
+    _context = None
 
-    def on_kv_post(self, *args):
-        for i in range(10):
-            app = App.get_running_app()
-            p = food.Food(i, f'Food#{i+1}', 2, 3, 1, 2, 4, app.context.get_file(app.context.files.imgs.food), *list(range(5)))
-            v = FoodView(p)
-            self.grid.add_widget(v)
-        pass
+    def setup_grid(self, foods):
+        self.clear_grid()
+        for food in foods:
+            view = FoodView(food)
+            self.grid.add_widget(view)
+
+    def clear_grid(self):
+        childs = [c for c in self.grid.children]
+        for child in childs:
+            self.grid.remove_widget(child)
+
+    def initialize(self, context):
+        if not self._initialized:
+            self._context = context
+            foods = context.get_food_objects()
+            self.setup_grid(foods)
+            self.initialized = True
+
+    def order(self, order_by):
+        foods = self._context.re_sort_foods(order_by)
+        self.setup_grid(foods)

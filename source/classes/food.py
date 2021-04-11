@@ -13,3 +13,4 @@ class Food:
         self.nutrition_info = nutrition_info
         self.medicinal_info = medicinal_info
         self.harvest_time = harvest_time
+

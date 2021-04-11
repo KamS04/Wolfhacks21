@@ -1,5 +1,5 @@
 import os
-
+import data
 
 class Constants():
     def __init__(self, data):
@@ -32,7 +32,13 @@ class Constants():
 
 
 CONSTANTS = {
-
+    # Sortings Enum
+    'NAME': lambda food: food.name,
+    'GROWTH': lambda food: food.growth,
+    'NUTRITION': lambda food: food.nutrition,
+    'HARVEST': lambda food: food.harvest,
+    'SUSTAINABILITY': lambda food: food.sustainability,
+    'MEDICINAL': lambda food: food.medicinal,
 }
 
 FILES = {
@@ -46,7 +52,11 @@ FILES = {
         'potatoes': os.path.join('rootdir', 'assets', 'imgs', 'potatoes.png'),
         'spinach': os.path.join('rootdir', 'assets', 'imgs', 'spinach.png'),
         'strawberry': os.path.join('rootdir', 'assets', 'imgs', 'strawberry.png'),
-        'wheat': os.path.join('rootdir', 'assets', 'imgs', 'wheat.png')
+        'wheat': os.path.join('rootdir', 'assets', 'imgs', 'wheat.png'),
+        'asparagus': os.path.join('rootdir', 'assets', 'imgs', 'asparagus.png'),
+        'barley': os.path.join('rootdir', 'assets', 'imgs', 'barley.png'),
+        'basil': os.path.join('rootdir', 'assets', 'imgs', 'basil.png'),
+        'beetroot': os.path.join('rootdir', 'assets', 'imgs', 'beetroot.png'),
     }),
     'kv_files': [
         os.path.join('rootdir', 'assets', 'kv_files', 'homescreen.kv'),
@@ -71,17 +81,21 @@ class Context():
         self.constants = Constants(CONSTANTS)
         self.files = Constants(FILES)
         self.colors = Constants(COLORS)
-        # self.database =
-        pass
-
-    def get_database(self):
-        # manchits databsase goes here
-        return self.database
+        self.initialize_database()
     
-    def initialize_database(self):
-        # initialize connection to database here
-        pass
+    def initialize_database(self):        
+        # INIT Foods
+        foods = data.gen_foods(self)
+        # sort foods
+        self.foods = sorted(foods, key=self.constants.NAME)
     
     def get_file(self, file_path):
         f = file_path.replace('rootdir', os.path.dirname(__file__))
         return f
+    
+    def re_sort_foods(self, sort_name):        
+        self.foods = sorted(self.foods, key=self.constants[sort_name])
+        return self.foods
+
+    def get_food_objects(self):
+        return self.foods

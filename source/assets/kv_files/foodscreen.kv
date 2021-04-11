@@ -69,18 +69,36 @@
             size_hint: 0.9, 0.1
             pos_hint: {'y': 0.7, 'center_x': 0.5}
 
-            Label:
+            Button:
                 text: 'Name'
-            Label:
+                background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                on_press:
+                    root.order('NAME')
+            Button:
                 text: 'Growth\nConvenience'
-            Label:
+                background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                on_press:
+                    root.order('GROWTH')
+            Button:
                 text: 'Nutrition +\nCalorie +\nDensity'
-            Label:
+                background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                on_press:
+                    root.order('NUTRITION')
+            Button:
                 text: 'Harvest\nProduction'
-            Label:
+                background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                on_press:
+                    root.order('HARVEST')
+            Button:
                 text: 'Sustainability'
-            Label:
+                background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                on_press:
+                    root.order('SUSTAINABILITY')
+            Button:
                 text: 'Medicinal +\nHealthnenefits'
+                background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                on_press:
+                    root.order('MEDICINAL')
             Label:
                 text: 'Image'
 

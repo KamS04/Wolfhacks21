@@ -41,14 +41,16 @@ class MainApp(App):
 
     def on_start(self):
         self.food_info_screen = self.root.ids['food_info_screen']
+        self.root.ids['food_screen'].initialize(self.context)
 
     def switch_screen(self, screen_name):
         if self.screen_moves[self.root.current] > self.screen_moves[screen_name]:
             self.root.transition = SlideTransition(direction='right')
         else:
-            self.root.transition = SlideTransition(direction='left')            
+            self.root.transition = SlideTransition(direction='left')                
         self.root.current = screen_name
     
     def show_food_info(self, food):
         self.food_info_screen.set_food(food)
         self.switch_screen(self.food_info_screen.name)
+

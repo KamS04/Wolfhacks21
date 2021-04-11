@@ -1,6 +1,15 @@
 #:import utils kivy.utils
 
+<SpecialLabel>:
+    halign: 'left'
+    text_size: self.size[0] - 10, self.size[1]
+
 <FoodInfoScreen>:
+    medicine_grid: medicine_grid
+    sustain_grid: sustain_grid
+    nutrition_grid: nutrition_grid
+    growth_grid: growth_grid
+
     FloatLayout:
         canvas.before:
             Color:
@@ -29,8 +38,15 @@
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             cols: 2
             spacing: 10, 10
+            padding: 10, 10, 10, 10
 
             ScrollView:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex('#242424')
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos            
                 id: scroll
                 size_hint: 0.9, 0.6
                 pos_hint: {'y': 0.1, 'center_x': 0.5}
@@ -40,12 +56,18 @@
                     cols: 1
                     size_hint_y: None
                     height: self.minimum_height
-                    row_default_height: 120
+                    row_default_height: root.min_height
                     row_force_default: True
                     padding: 5, 5
                     spacing: 2, 10
 
             ScrollView:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex('#242424')
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
                 id: scroll
                 size_hint: 0.9, 0.6
                 pos_hint: {'y': 0.1, 'center_x': 0.5}
@@ -55,12 +77,18 @@
                     cols: 1
                     size_hint_y: None
                     height: self.minimum_height
-                    row_default_height: 120
+                    row_default_height: root.min_height
                     row_force_default: True
                     padding: 5, 5
                     spacing: 2, 10
 
             ScrollView:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex('#242424')
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
                 id: scroll
                 size_hint: 0.9, 0.6
                 pos_hint: {'y': 0.1, 'center_x': 0.5}
@@ -70,12 +98,18 @@
                     cols: 1
                     size_hint_y: None
                     height: self.minimum_height
-                    row_default_height: 120
+                    row_default_height: root.min_height
                     row_force_default: True
                     padding: 5, 5
                     spacing: 2, 10
 
             ScrollView:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex('#242424')
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
                 id: scroll
                 size_hint: 0.9, 0.6
                 pos_hint: {'y': 0.1, 'center_x': 0.5}
@@ -85,7 +119,7 @@
                     cols: 1
                     size_hint_y: None
                     height: self.minimum_height
-                    row_default_height: 120
+                    row_default_height: root.min_height
                     row_force_default: True
                     padding: 5, 5
                     spacing: 2, 10
@@ -99,6 +133,6 @@
                     pos: self.pos
             
             text: 'Harvest Time: ' + root.harvest_time
-            size_hint: 0.1, 0.1
-            pos_hint: {'x': 0.05, 'top': 0.15}
+            size_hint: 0.8, 0.1
+            pos_hint: {'center_x': 0.5, 'top': 0.15}
 
