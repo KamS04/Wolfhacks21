@@ -1,10 +1,13 @@
-class Application():
+import context
+
+class Application(context.Context):
     def __init__(self):
+        super().__init__()
         # Here shall be the code that initializes global variables
         pass
 
     def run(self):
-        # Hera shall be where we start the app
+        # Here shall be where we start the app
         pass
 
 
