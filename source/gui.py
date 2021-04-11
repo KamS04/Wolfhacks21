@@ -5,7 +5,7 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import SlideTransition
 
 # widgets
-from ui import homescreen, passengersscreen
+from ui import homescreen, passengersscreen, foodscreen, food_info
 
 def calculate_size(width, aspect_ratio):
     height = width * aspect_ratio[1] / aspect_ratio[0]
@@ -23,7 +23,8 @@ class MainApp(App):
     screen_moves = {
         home_screen: 0,
         passengers_screen: 1,
-        food_screen: 1
+        food_screen: 1,
+        'food_info': 2
     }
 
     def __init__(self, context):
@@ -38,9 +39,16 @@ class MainApp(App):
         main_kv = self.context.get_file(self.context.files.app_kv)        
         return Builder.load_file(main_kv)
 
+    def on_start(self):
+        self.food_info_screen = self.root.ids['food_info_screen']
+
     def switch_screen(self, screen_name):
         if self.screen_moves[self.root.current] > self.screen_moves[screen_name]:
             self.root.transition = SlideTransition(direction='right')
         else:
             self.root.transition = SlideTransition(direction='left')            
         self.root.current = screen_name
+    
+    def show_food_info(self, food):
+        self.food_info_screen.set_food(food)
+        self.switch_screen(self.food_info_screen.name)

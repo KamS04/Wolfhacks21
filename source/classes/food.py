@@ -1,7 +1,10 @@
 class Food:
-    def __init__(self, ID, nutrition, harvest_time, storage):
+    def __init__(self, ID, name, growth, nutrition, harvest, sustainability, medicinal, image):
         self.ID = ID
+        self.name = name
+        self.growth = growth
         self.nutrition = nutrition
-        self.harvest_time = harvest_time
-        self.storage = storage
-
+        self.harvest = harvest
+        self.sustainability = sustainability
+        self.medicinal = medicinal
+        self.image = image

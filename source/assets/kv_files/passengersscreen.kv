@@ -33,14 +33,13 @@
 
 <PassengersScreen>:
     grid: passenger_grid
-    canvas.before:
-        Color:
-            rgb: 0.1, 0.1, 0.1
-        Rectangle:
-            size: self.size
-            pos: self.pos
     
     FloatLayout:
+        Image:
+            size_hint: 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            source: app.context.get_file(app.context.files['imgs']['stars'])            
+
         Button:
             text: 'Back'
             size_hint: 0.1, 0.1

@@ -1,0 +1,100 @@
+#:import utils kivy.utils
+
+<FoodView>:
+    GridLayout:
+        canvas.before:
+            Color:
+                rgb: utils.get_color_from_hex(app.context.colors['primary']['light'])
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
+        size_hint: 1, 1
+        pos_hint: {'x': 0, 'y': 0}
+        rows: 1
+
+        Label:
+            text: root.name
+        Label:
+            text: str(root.growth)
+        Label:
+            text: str(root.nutrition)
+        Label:
+            text: str(root.harvest)
+        Label:
+            text: str(root.sustainability)
+        Label:
+            text: str(root.medicinal)
+        Image:
+            source: app.context.get_file(root.image)
+
+<FoodScreen>:
+    grid: food_grid
+    
+    FloatLayout:
+        Image:
+            size_hint: 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            source: app.context.get_file(app.context.files['imgs']['stars'])            
+
+        Button:
+            text: 'Back'
+            size_hint: 0.1, 0.1
+            pos_hint: {'x': 0.05, 'top': 0.97}
+            background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+            on_press:
+                app.switch_screen(app.home_screen)
+
+
+        Label:
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex(app.context.colors['primary']['primary'])
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            text: 'Food'
+            pos_hint: {'top': 0.95, 'center_x': 0.5}
+            size_hint: 0.3, 0.1
+            font_size: 22
+
+        GridLayout:      
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex(app.context.colors['primary']['light'])
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            size_hint: 0.9, 0.1
+            pos_hint: {'y': 0.7, 'center_x': 0.5}
+
+            Label:
+                text: 'Name'
+            Label:
+                text: 'Growth\nConvenience'
+            Label:
+                text: 'Nutrition +\nCalorie +\nDensity'
+            Label:
+                text: 'Harvest\nProduction'
+            Label:
+                text: 'Sustainability'
+            Label:
+                text: 'Medicinal +\nHealthnenefits'
+            Label:
+                text: 'Image'
+
+        ScrollView:
+            id: scroll
+            size_hint: 0.9, 0.6
+            pos_hint: {'y': 0.1, 'center_x': 0.5}
+
+            GridLayout:
+                id: food_grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 120
+                row_force_default: True
+                padding: 5, 5
+                spacing: 2, 10

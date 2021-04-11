@@ -38,11 +38,15 @@ CONSTANTS = {
 FILES = {
     'imgs': Constants ( {
         'homescreen_bg': os.path.join('rootdir', 'assets', 'imgs', 'homescreenbg.png'),
-        'avatar': os.path.join('rootdir', 'assets', 'imgs', 'avatar.png')
+        'avatar': os.path.join('rootdir', 'assets', 'imgs', 'avatar.png'),
+        'stars': os.path.join('rootdir', 'assets', 'imgs', 'stars.png'),
+        'food': os.path.join('rootdir', 'assets', 'imgs', 'food.jpg')
     }),
     'kv_files': [
         os.path.join('rootdir', 'assets', 'kv_files', 'homescreen.kv'),
-        os.path.join('rootdir', 'assets', 'kv_files', 'passengersscreen.kv')
+        os.path.join('rootdir', 'assets', 'kv_files', 'passengersscreen.kv'),
+        os.path.join('rootdir', 'assets', 'kv_files', 'foodscreen.kv'),
+        os.path.join('rootdir', 'assets', 'kv_files', 'foodinfoscreen.kv')
     ],
     'app_kv': os.path.join('rootdir', 'assets', 'main.kv')
 }
