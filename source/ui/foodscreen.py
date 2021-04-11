@@ -36,7 +36,7 @@ class FoodScreen(Screen):
     def on_kv_post(self, *args):
         for i in range(10):
             app = App.get_running_app()
-            p = food.Food(i, f'Food#{i+1}', 2, 3, 1, 2, 4, app.context.get_file(app.context.files.imgs.food))
+            p = food.Food(i, f'Food#{i+1}', 2, 3, 1, 2, 4, app.context.get_file(app.context.files.imgs.food), *list(range(5)))
             v = FoodView(p)
             self.grid.add_widget(v)
         pass

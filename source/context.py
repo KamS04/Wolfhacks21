@@ -6,7 +6,7 @@ class Constants():
         self.data = data
 
     def __getattr__(self, name: str):
-        print(name, self.data)
+        #print(name, self.data)
         return self.data[name]
     
     def __getitem__(self, name):
@@ -40,7 +40,13 @@ FILES = {
         'homescreen_bg': os.path.join('rootdir', 'assets', 'imgs', 'homescreenbg.png'),
         'avatar': os.path.join('rootdir', 'assets', 'imgs', 'avatar.png'),
         'stars': os.path.join('rootdir', 'assets', 'imgs', 'stars.png'),
-        'food': os.path.join('rootdir', 'assets', 'imgs', 'food.jpg')
+        'food': os.path.join('rootdir', 'assets', 'imgs', 'food.jpg'),
+        'amaranth': os.path.join('rootdir', 'assets', 'imgs', 'amaranth.png'),
+        'ginger': os.path.join('rootdir', 'assets', 'imgs', 'ginger.png'),
+        'potatoes': os.path.join('rootdir', 'assets', 'imgs', 'potatoes.png'),
+        'spinach': os.path.join('rootdir', 'assets', 'imgs', 'spinach.png'),
+        'strawberry': os.path.join('rootdir', 'assets', 'imgs', 'strawberry.png'),
+        'wheat': os.path.join('rootdir', 'assets', 'imgs', 'wheat.png')
     }),
     'kv_files': [
         os.path.join('rootdir', 'assets', 'kv_files', 'homescreen.kv'),
