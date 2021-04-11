@@ -37,12 +37,12 @@ CONSTANTS = {
 
 FILES = {
     'imgs': Constants ( {
-        'homescreen_bg': r'rootdir\assets\imgs\homescreenbg.png'
+        'homescreen_bg': os.path.join('rootdir', 'assets', 'imgs', 'homescreenbg.png')
     }),
     'kv_files': [
-        r'rootdir\assets\kv_files\homescreen.kv'
+        os.path.join('rootdir', 'assets', 'kv_files', 'homescreen.kv')
     ],
-    'app_kv': r'rootdir\assets\main.kv'
+    'app_kv': os.path.join('rootdir', 'assets', 'main.kv')
 }
 
 class Context():
