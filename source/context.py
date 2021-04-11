@@ -37,7 +37,8 @@ CONSTANTS = {
 
 FILES = {
     'imgs': Constants ( {
-        'homescreen_bg': os.path.join('rootdir', 'assets', 'imgs', 'homescreenbg.png')
+        'homescreen_bg': os.path.join('rootdir', 'assets', 'imgs', 'homescreenbg.png'),
+        'avatar': os.path.join('rootdir', 'assets', 'imgs', 'avatar.png')
     }),
     'kv_files': [
         os.path.join('rootdir', 'assets', 'kv_files', 'homescreen.kv'),

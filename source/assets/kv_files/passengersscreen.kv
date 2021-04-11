@@ -1,7 +1,78 @@
+#:import utils kivy.utils
+
+<PassengerView>:
+    GridLayout:
+        canvas.before:
+            Color:
+                rgb: utils.get_color_from_hex(app.context.colors['primary']['light'])
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        cols: 2
+        size_hint: 1, 1
+        pos_hint: {'x': 0, 'y': 0}
+        GridLayout:
+            cols: 1
+            size_hint_y: 0.8
+            size_hint_x: None
+            width: 300
+
+            Label:
+                text: 'ID: ' + str(root.id)
+            Label:
+                text: 'Name: ' + root.name
+            Label:
+                text: 'Height: ' + str(root.height)
+            Label:
+                text: 'Age: ' + str(root.age)
+            Label:
+                text: 'Weight: ' + str(root.weight)
+        Image:
+            source: app.context.get_file(root.image)
+
 <PassengersScreen>:
+    grid: passenger_grid
     canvas.before:
         Color:
             rgb: 0.1, 0.1, 0.1
         Rectangle:
             size: self.size
             pos: self.pos
+    
+    FloatLayout:
+        Button:
+            text: 'Back'
+            size_hint: 0.1, 0.1
+            pos_hint: {'x': 0.05, 'top': 0.97}
+            background_color: utils.get_color_from_hex(app.context.colors['primary']['light'])
+            on_press:
+                app.switch_screen(app.home_screen)
+
+
+        Label:
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex(app.context.colors['primary']['primary'])
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            text: 'Passengers'
+            pos_hint: {'top': 0.95, 'center_x': 0.5}
+            size_hint: 0.3, 0.1
+            font_size: 22
+
+        ScrollView:
+            id: scroll
+            size_hint: 0.9, 0.6
+            pos_hint: {'y': 0.1, 'center_x': 0.5}
+
+            GridLayout:
+                id: passenger_grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 120
+                row_force_default: True
+                padding: 5, 5
+                spacing: 2, 10
