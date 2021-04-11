@@ -1,10 +1,11 @@
 from kivy.uix.screenmanager import Screen
 from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.behaviors import ButtonBehavior
 from kivy.properties import NumericProperty, StringProperty, ObjectProperty
 from classes import passenger
 from kivy.app import App
 
-class PassengerView(FloatLayout):
+class PassengerView(ButtonBehavior, FloatLayout):
     id = NumericProperty(0)
     name = StringProperty('')
     height = NumericProperty(0)
@@ -20,6 +21,10 @@ class PassengerView(FloatLayout):
         self.weight = passenger.weight
         self.image = passenger.avatar
         self.name = passenger.name
+        self.passenger = passenger
+    
+    def on_press(self, *args):
+        App.get_running_app().show_diet_screen(self.passenger)
 
 
 class PassengersScreen(Screen):

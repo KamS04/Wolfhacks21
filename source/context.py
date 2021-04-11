@@ -62,7 +62,8 @@ FILES = {
         os.path.join('rootdir', 'assets', 'kv_files', 'homescreen.kv'),
         os.path.join('rootdir', 'assets', 'kv_files', 'passengersscreen.kv'),
         os.path.join('rootdir', 'assets', 'kv_files', 'foodscreen.kv'),
-        os.path.join('rootdir', 'assets', 'kv_files', 'foodinfoscreen.kv')
+        os.path.join('rootdir', 'assets', 'kv_files', 'foodinfoscreen.kv'),
+        os.path.join('rootdir', 'assets', 'kv_files', 'dietscreen.kv')
     ],
     'app_kv': os.path.join('rootdir', 'assets', 'main.kv')
 }

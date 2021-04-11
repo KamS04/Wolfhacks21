@@ -63,9 +63,9 @@ def gen_foods(context):
 
         Food(6, 'Strawberry', 7, 7, 6, 5, 6, context.files.imgs.strawberry,
             [
-                "Climate+Temperature: direct sunlight for 6 - 10 hours a day, 60 - 80 degrees Fahrenheit (ideal temp)",
-                "Labour Inputs: water daily for best results (keep soil moist), weed daily (by hand)",
-                "Fertilizer: Are tolerant of most soils, but grows best in fertile, well-drained loam"
+                "Climate+Temperature: direct sunlight for\n6 - 10 hours a day, 60 - 80 degrees Fahrenheit (ideal temp)",
+                "Labour Inputs: water daily for best results\n(keep soil moist), weed daily (by hand)",
+                "Fertilizer: Are tolerant of most soils, but\ngrows best in fertile, well-drained loam"
             ],
             "Ready to harvest 4-6 weeks after flowers bloom (Approximately 3 months)",
             [
@@ -75,10 +75,10 @@ def gen_foods(context):
                 "Store in closed and refrigerated container",
                 "Lasts up to 2 weeks most",
                 "Can be dried but does not provide many nutritional benefits",
-                "Plant lasts up to 6 years (reproduces naturally once a year based on cycle)"
+                "Plant lasts up to 6 years (reproduces naturally\nonce a year based on cycle)"
             ],
             [
-                "Controls blood sugar, good heart health, can help prevent cardiovascular disease and other diseases, guards against cancer and increases HDL (good) cholesterol"
+                "Controls blood sugar, good heart health, can help\nprevent cardiovascular disease and other\ndiseases, guards against cancer and increases\nHDL (good) cholesterol"
             ]
         ),
         Food(7, 'Spinach', 8, 8, 8, 7, 6, context.files.imgs.spinach,
@@ -89,18 +89,58 @@ def gen_foods(context):
             ],
             "Approx. 6 weeks",
             [
-                "High in calcium, magnesium and iron, reduces blood sugar, improves eyesight, helps bone growth and maintenance, reduces cholesterol",
+                "High in calcium, magnesium and iron, reduces\nblood sugar, improves eyesight, helps bone\ngrowth and maintenance, reduces cholesterol",
                 "Also contains folate, vitamins B6, B9, C, and K, iron, carotenoids, potassium"
             ],
             [
                 "Wash, package and refrigerate spinach",
-                "Can be preserved up to 3 weeks, frozen can be preserved for up to 8 weeks but loses nutritional value in the process",
+                "Can be preserved up to 3 weeks, frozen can be\npreserved for up to 8 weeks but loses\nnutritional value in the process",
                 "Regenerates for up to 4 harvests, but can expand to create new plants; reseeds on its own"
             ],
             [
-                "Reduces blood sugar, improves eyesight, helps bone growth and maintenance, reduces cholesterol"
+                "Reduces blood sugar, improves eyesight, helps\nbone growth and maintenance, reduces cholesterol"
             ]
         ),
+        Food(8, 'Potatoes', 6, 6, 7, 8, 7, context.files.imgs.potatoes,
+            [
+                "Climate+Temperature: temperate conditions,\nfull sun",
+                "Labour Inputs: Water every other day and\nsoil maintenance every week",
+                "Fertilizer: light, loose, well-drained soil,\nphosphate and potassium is beneficial"
+            ],
+            "Approx. 10 weeks after potato flowers",
+            [
+                "Rich in fiber, antioxidants, magnesium, vitamins\nB6 and C, copper, manganese, niacin,\nand phosphorus."
+            ],
+            [
+                "Store in a cool dark area",
+                "Keep open (do not seal unless its roots)",
+                "Can store open potatoes for up to 2 months,\n5 months if frozen",
+                "Easy to grow more harvest from existing harvest"
+            ],
+            [
+                "Improved blood sugar control, reduced heart\ndisease risk and higher immunity, filling for long periods of time"
+            ]
+        ),
+        Food(9, 'Wheat', 4, 4, 7, 9, 7, context.files.imgs.wheat,
+            [
+                "Climate: In and out of the sun",
+                "Temperature: Requires cold and hot\ntemperatures",
+                "Labour Inputs: 4-5 hours",
+                "Fertilizer: Phosphorous start soil"
+            ],
+            "Approximately 8 months (3 seasons)",
+            [
+                "Niacin, fibre, vitamin B6, manganese, selenium,\niron, copper, folate and niacin,\namong other minerals"
+            ],
+            [
+                "Minimum of 10m^2 needed to harvest",
+                "Packaged and can be stored up to 3 years",
+                "Must be harvested each year/ season but\nharvests are large and last long"
+            ],
+            [
+                "Supports digestion, reduce risks of obesity,\nlowers risks of stroke and heart disease and prevents of celiac disease"
+            ]
+        )
     ]
     return foods
 
