@@ -12,6 +12,7 @@ class Constants():
     def __getitem__(self, name):
         return self.data[name]
 
+
 class Context():
     def __init__(self):
         # initialize database here
