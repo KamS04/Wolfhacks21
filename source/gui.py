@@ -1,4 +1,3 @@
-from re import X
 import kivy
 from kivy.app import App
 from kivy.lang.builder import Builder
