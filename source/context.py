@@ -45,11 +45,20 @@ FILES = {
     'app_kv': os.path.join('rootdir', 'assets', 'main.kv')
 }
 
+COLORS = {
+    'primary': Constants( {
+        'primary': '#0d47a1',
+        'light': '#5472d3'
+    })
+}
+
+
 class Context():
     def __init__(self):
         # initialize database here
         self.constants = Constants(CONSTANTS)
         self.files = Constants(FILES)
+        self.colors = Constants(COLORS)
         # self.database =
         pass
 
