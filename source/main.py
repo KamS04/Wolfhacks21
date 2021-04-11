@@ -8,6 +8,8 @@ class Application(context.Context):
 
     def run(self):
         # Here shall be where we start the app
+        print("HELLO THERE")
+        print("General Kenobi")
         pass
 
 
